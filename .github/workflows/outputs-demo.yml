@@ -3,7 +3,7 @@ on: push
 jobs:
   build:
     outputs:
-      versions: ${{ steps.step1.outputs.version}}
+      version: ${{ steps.step1.outputs.version}}
     runs-on: ubuntu-latest 
     steps:
       - name: Build One
@@ -16,5 +16,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy the App
-        run: echo "We are deploying the app with version $ {{ neeeds.build.outputs.versions }}"
+        run: echo "We are deploying the app with version ${{ neeeds.build.outputs.version }}"
       
