@@ -33,7 +33,7 @@ jobs:
       - name: prod Deploy
         run: echo "Performing deployment of the code on prod"
   success_notify: 
-      needs: ['quality_checks','dev_deploy','prod_deploy']
+      needs: [quality_checks,dev_deploy,prod_deploy]
       if: always() && !failure()
       runs-on: ubuntu-latest
       steps: 
@@ -41,7 +41,7 @@ jobs:
           run: echo "success email sent to the team"
 
   failure_notify: 
-      needs: ['quality_checks','dev_deploy','prod_deploy']
+      needs: [quality_checks,dev_deploy,prod_deploy]
       if: failure()
       runs-on: ubuntu-latest
       steps: 
