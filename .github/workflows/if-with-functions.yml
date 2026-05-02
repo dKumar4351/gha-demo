@@ -37,13 +37,13 @@ jobs:
       if: always() && !failure()
       runs-on: ubuntu-latest
       steps: 
-        -name: Notify success
-        run: echo "success email sent to the team"
+        - name: Notify success
+          run: echo "success email sent to the team"
 
   failure_notify: 
       needs: ['quality_checks','dev_deploy','prod_deploy']
       if: failure()
       runs-on: ubuntu-latest
       steps: 
-        -name: Notify Failure
-        run: echo "Deployment pipeline has failed"
+        - name: Notify Failure
+          run: echo "Deployment pipeline has failed" 
