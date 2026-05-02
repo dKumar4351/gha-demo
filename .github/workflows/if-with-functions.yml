@@ -27,7 +27,7 @@ jobs:
         run: echo "Performing deployment of the code on dev"
 
   prod_deploy:
-    if: github.ref_name == 'main') && github.event_name == 'push'
+    if: github.ref_name == 'main' && github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
       - name: prod Deploy
